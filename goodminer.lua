@@ -476,7 +476,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
     end	
     
 	press, key = os.pullEvent()
-    while press == "key_up" and key == ENTER_KEY
+    while press == "key_up" and key == ENTER_KEY do
 		press, key = os.pullEvent()
         end
 
