@@ -1608,11 +1608,3 @@ refuel_count = moveForward(FacingAngle, true, 1, false, false, refuel_count)
 resetScreen()
 write("Done. I hope I worked well !")
 term.setCursorPos(1,8)
-create new paste  /  syntax languages  /  archive  /  faq  /  tools  /  night mode  /  api  /  scraping api   /  pro
-privacy statement  /  cookies policy  /  terms of serviceupdated  /  security disclosure  /  dmca  /  report abuse  /  contact
-
-By using Pastebin.com you agree to our cookies policy to enhance your experience.
-Site design & logo © 2021 Pastebin
-We use cookies for various purposes including analytics. By continuing to use Pastebin, you agree to our use of cookies as described in the Cookies Policy.  OK, I Understand
-Not a member of Pastebin yet?
-Sign Up, it unlocks many cool features! 
