@@ -1,4 +1,4 @@
-
+s
 --[[Copyright PrinceTommen - Script developed for CyanideEpic (twitch.tv/cyanideepic)]]--
 --[[You are all allowed to use it as long as you don't pretend it's yours]]--
 --[[Have fun !]]--
@@ -33,6 +33,8 @@ Release Note:
 		Option to throw cobblestone automatically (suggested by Niseg)
 	Fixed:	Refueling issue in certain circumstances (reported by CyanideEpic)			
 ]]--
+
+local ENTER_KEY = keys.enter
 function resetScreen()
 	term.clear()
 	term.setCursorPos(14,1)
@@ -190,7 +192,7 @@ function manageShortage(managedItem, initial_item_slot, final_item_slot)
 		turn(FacingAngle, true, 4)
 		os.startTimer(1)
 		press, key = os.pullEvent()
-	until (key == 28)
+	until (key == ENTER_KEY)
 	clearLines(4,10)
 	current_slot[managedItem] = 1
 	shortage[managedItem] = false
@@ -477,7 +479,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 	textOutput("Press enter once you have chosen all the options you wanted to activate.", 1, 11, 0)
 	while true do
 		press, key = os.pullEvent()
-		if press == "key" and key == 28 then
+		if press == "key" and key == ENTER_KEY then
 			break
 		elseif key == 46 then
 			if Chest_approval then
@@ -543,7 +545,7 @@ textOutput("Else, press enter to skip this step.", 1, 10, 0)
 torches_slots, chests_slots, garbage_slots = 0, 0, 0	
 while true do
 	press, key = os.pullEvent()
-	if press == "key" and key == 28 then
+	if press == "key" and key == ENTER_KEY then
 		fuel_slots = 1
 		break
 	elseif key == 31 then
@@ -624,7 +626,7 @@ end
 textOutput("Press enter to start", 1, 11, 0)
 while true do
 	press, key = os.pullEvent()
-	if press == "key" and key == 28 then
+	if press == "key" and key == ENTER_KEY then
 		break
 	end	
 end
