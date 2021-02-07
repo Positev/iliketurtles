@@ -473,13 +473,8 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 		tunnels_separation = securedInput(37, 8, "integer", 1, 1000, " ", " ")
 	else
 		tunnels_separation = 0
-    end	
-    
-	press, key = os.pullEvent()
-    while press == "key_up" and key == ENTER_KEY do
-		press, key = os.pullEvent()
-        end
-
+	end	
+	
 	resetScreen()
 	textOutput("To use regular chests, press c", 1, 4, 0)
 	textOutput("To use an enderchest, press e", 1, 5, 0)
@@ -488,9 +483,9 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 	textOutput("Press enter once you have chosen all the options you wanted to activate.", 1, 11, 0)
 	while true do
 		press, key = os.pullEvent()
-		if press == "key_up" and key == ENTER_KEY then
+		if press == "key" and key == ENTER_KEY then
 			break
-		elseif press == "key_up" and key == c_key then
+		elseif key == c_key then
 			if Chest_approval then
 				Chest_approval = false
 				textOutput("", 10, 9, 11)
@@ -498,7 +493,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 				Chest_approval = true
 				textOutput("Chests,", 10, 9, 11)
 			end
-		elseif press == "key_up" and key == e_key then
+		elseif key == e_key then
 			if enderchest then
 				enderchest = not(enderchest)
 				textOutput("", 10, 9, 11)
@@ -507,7 +502,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 				enderchest = true
 				textOutput("Enderchest,", 10, 9, 11)
 			end
-		elseif press == "key_up" and key == t_key then
+		elseif key == t_key then
 			if Torch_approval then
 				Torch_approval = false
 				textOutput("", 1, 9, 8)
@@ -515,7 +510,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 				Torch_approval = true
 				textOutput("Torches,", 1, 9, 8)
 			end
-		elseif press == "key_up" and key == p_key then
+		elseif key == p_key then
 			if throw_stuff then
 				throw_stuff = not(throw_stuff)
 				textOutput("", 22, 9, 12)			
@@ -554,7 +549,7 @@ textOutput("Else, press enter to skip this step.", 1, 10, 0)
 torches_slots, chests_slots, garbage_slots = 0, 0, 0	
 while true do
 	press, key = os.pullEvent()
-	if press == "key_up" and key == ENTER_KEY then
+	if press == "key" and key == ENTER_KEY then
 		fuel_slots = 1
 		break
 	elseif key == 31 then
@@ -635,7 +630,7 @@ end
 textOutput("Press enter to start", 1, 11, 0)
 while true do
 	press, key = os.pullEvent()
-	if press == "key_up" and key == ENTER_KEY then
+	if press == "key" and key == ENTER_KEY then
 		break
 	end	
 end
