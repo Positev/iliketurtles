@@ -31,46 +31,46 @@ end
 
 function down()
   print("down")
-  --turtle.down()
-  --movestack.push(turtle.up)
+  turtle.down()
+  movestack.push(turtle.up)
   movestack.push("up")
 end
 
 
 function up()
   print("up")
-  --turtle.up()
-  --movestack.push(turtle.down)
+  turtle.up()
+  movestack.push(turtle.down)
   movestack.push("down")
 end
 
 function walk()
   print("forward")
-  --turtle.forward()
-  --movestack.push(turtle.back)
+  turtle.forward()
+  movestack.push(turtle.back)
   movestack.push("back")
 end
 
 function back()
   print("back")
-  --turtle.back()
-  --movestack.push(turtle.forward)
+  turtle.back()
+  movestack.push(turtle.forward)
   
   movestack.push("forward")
 end
 
 function turn_right()
   print("turn right")
-  --turtle.turnRight()
-  --movestack.push(turtle.turnLeft)
+  turtle.turnRight()
+  movestack.push(turtle.turnLeft)
   movestack.push("turn Left")
 end
 
 function turn_left()
 
   print("turn Left")
-  --turtle.turnLeft()
-  --movestack.push(turtle.turnRight)
+  turtle.turnLeft()
+  movestack.push(turtle.turnRight)
 
   movestack.push("turn Right")
 end
@@ -80,12 +80,23 @@ function returnToHome()
   local top = movestack.pop()
   while top do
     print(top)
+    top = movestack.pop()
   end
 
 end
 
 
-walk()
-walk()
+while(index < 5) do
+  
+  turtle.dig()
+  walk()
+  turtle.dig()
+  turtle.digDown()
+  down()
+  turtle.digDown()
+
+  index = index + 1
+end
+
 returnToHome()
 
