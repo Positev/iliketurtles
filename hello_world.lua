@@ -85,7 +85,7 @@ function returnToHome()
 
 end
 
-
+local index = 0
 while(index < 5) do
   
   turtle.dig()
