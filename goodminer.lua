@@ -483,7 +483,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 	textOutput("Press enter once you have chosen all the options you wanted to activate.", 1, 11, 0)
 	while true do
 		press, key = os.pullEvent()
-		if press == "key" and key == ENTER_KEY then
+		if press == "key_up" and key == ENTER_KEY then
 			break
 		elseif key == c_key then
 			if Chest_approval then
@@ -549,7 +549,7 @@ textOutput("Else, press enter to skip this step.", 1, 10, 0)
 torches_slots, chests_slots, garbage_slots = 0, 0, 0	
 while true do
 	press, key = os.pullEvent()
-	if press == "key" and key == ENTER_KEY then
+	if press == "key_up" and key == ENTER_KEY then
 		fuel_slots = 1
 		break
 	elseif key == 31 then
@@ -630,7 +630,7 @@ end
 textOutput("Press enter to start", 1, 11, 0)
 while true do
 	press, key = os.pullEvent()
-	if press == "key" and key == ENTER_KEY then
+	if press == "key_up" and key == ENTER_KEY then
 		break
 	end	
 end
