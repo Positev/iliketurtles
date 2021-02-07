@@ -35,6 +35,10 @@ Release Note:
 ]]--
 
 local ENTER_KEY = keys.enter
+local c_key = keys.c
+local e_key = keys.e
+local t_key = keys.t
+local p_key = keys.p
 function resetScreen()
 	term.clear()
 	term.setCursorPos(14,1)
@@ -481,7 +485,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 		press, key = os.pullEvent()
 		if press == "key" and key == ENTER_KEY then
 			break
-		elseif key == 46 then
+		elseif key == c_key then
 			if Chest_approval then
 				Chest_approval = false
 				textOutput("", 10, 9, 11)
@@ -489,7 +493,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 				Chest_approval = true
 				textOutput("Chests,", 10, 9, 11)
 			end
-		elseif key == 18 then
+		elseif key == e_key then
 			if enderchest then
 				enderchest = not(enderchest)
 				textOutput("", 10, 9, 11)
@@ -498,7 +502,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 				enderchest = true
 				textOutput("Enderchest,", 10, 9, 11)
 			end
-		elseif key == 20 then
+		elseif key == t_key then
 			if Torch_approval then
 				Torch_approval = false
 				textOutput("", 1, 9, 8)
@@ -506,7 +510,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 				Torch_approval = true
 				textOutput("Torches,", 1, 9, 8)
 			end
-		elseif key == 25 then
+		elseif key == p_key then
 			if throw_stuff then
 				throw_stuff = not(throw_stuff)
 				textOutput("", 22, 9, 12)			
