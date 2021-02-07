@@ -1,4 +1,4 @@
-s
+
 --[[Copyright PrinceTommen - Script developed for CyanideEpic (twitch.tv/cyanideepic)]]--
 --[[You are all allowed to use it as long as you don't pretend it's yours]]--
 --[[Have fun !]]--
