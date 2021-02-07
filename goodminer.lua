@@ -473,8 +473,13 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
 		tunnels_separation = securedInput(37, 8, "integer", 1, 1000, " ", " ")
 	else
 		tunnels_separation = 0
-	end	
-	
+    end	
+    
+	press, key = os.pullEvent()
+    while press == "key_up" and key == ENTER_KEY
+		press, key = os.pullEvent()
+        end
+
 	resetScreen()
 	textOutput("To use regular chests, press c", 1, 4, 0)
 	textOutput("To use an enderchest, press e", 1, 5, 0)
